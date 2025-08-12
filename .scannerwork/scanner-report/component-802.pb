@@ -1,0 +1,1 @@
+¢ 2tsXhr0FrontEnd/FmsFrontEnd/src/app/types/FuelDetail.ts

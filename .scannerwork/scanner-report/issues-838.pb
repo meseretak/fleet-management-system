@@ -1,0 +1,9 @@
+j
+WebTableHeaderHasIdOrScopeCheck;Add either an 'id' or a 'scope' attribute to this <th> tag.2&& +j
+WebTableHeaderHasIdOrScopeCheck;Add either an 'id' or a 'scope' attribute to this <th> tag.2)) 6j
+WebTableHeaderHasIdOrScopeCheck;Add either an 'id' or a 'scope' attribute to this <th> tag.2** 7j
+WebTableHeaderHasIdOrScopeCheck;Add either an 'id' or a 'scope' attribute to this <th> tag.2-- j
+WebTableHeaderHasIdOrScopeCheck;Add either an 'id' or a 'scope' attribute to this <th> tag.2.. j
+WebTableHeaderHasIdOrScopeCheck;Add either an 'id' or a 'scope' attribute to this <th> tag.2// j
+WebTableHeaderHasIdOrScopeCheck;Add either an 'id' or a 'scope' attribute to this <th> tag.200 j
+WebTableHeaderHasIdOrScopeCheck;Add either an 'id' or a 'scope' attribute to this <th> tag.211 

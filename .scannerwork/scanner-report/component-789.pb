@@ -1,0 +1,1 @@
+• 2tsXhrKFrontEnd/FmsFrontEnd/src/app/technical-service/technical-service.service.ts

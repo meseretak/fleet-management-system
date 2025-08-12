@@ -1,0 +1,1 @@
+è 2cssXhrZFrontEnd/FmsFrontEnd/src/app/technical-service/technical-home/technical-home.component.css

@@ -1,0 +1,12 @@
+k
+WebS6819SUse <dialog> instead of the dialog role to ensure accessibility across all devices.2cj k
+WebS6819SUse <html> instead of the document role to ensure accessibility across all devices.2kk 0m
+WebS6819SUse <dialog> instead of the dialog role to ensure accessibility across all devices.2
+ƒŠ m
+WebS6819SUse <html> instead of the document role to ensure accessibility across all devices.2
+‹‹ 0m
+WebS6819SUse <dialog> instead of the dialog role to ensure accessibility across all devices.2
+°· m
+WebS6819SUse <html> instead of the document role to ensure accessibility across all devices.2
+¸¸ 9L
+WebAvoidCommentedOutCodeCheckRemove this commented out code.2¼¼ 

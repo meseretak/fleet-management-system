@@ -1,0 +1,1 @@
+É 2cssXhr\FrontEnd/FmsFrontEnd/src/app/gs-authorizer/verified-requests/verified-requests.component.css

@@ -1,0 +1,1 @@
+¹ 2cssXhrXFrontEnd/FmsFrontEnd/src/app/gs-authorizer/delegate-gsauth/delegate-gsauth.component.css

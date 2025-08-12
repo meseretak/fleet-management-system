@@ -1,0 +1,1 @@
+í 2tsXhr5FrontEnd/FmsFrontEnd/src/app/auth/types/userdetail.ts

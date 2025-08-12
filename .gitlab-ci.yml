@@ -1,0 +1,85 @@
+stages:
+  - build-backend
+  - test-backend
+  - build-frontend
+  - deploy
+
+# Frontend and backend use different images
+# We'll use 'default' for backend, and override for frontend job
+before_script:
+  - git reset --hard
+  - git clean -fd
+  - git fetch --all
+  - git config --global url."https://gitlab.com/".insteadOf "http://localhost:8000/"
+variables:
+  MAVEN_CLI_OPTS: "-s .m2/settings.xml --batch-mode"
+  MAVEN_OPTS: "-Dmaven.repo.local=.m2/repository"
+  APP_NAME: fms-backend
+  JAR_PATH: backend/target/*.jar
+  FRONTEND_BUILD_DIR: frontend/dist/ # or frontend/build/ depending on framework
+
+cache:
+  paths:
+    - .m2/repository
+    - backend/target/
+    - frontend/node_modules/
+
+before_script:
+  - echo "🔁 Starting GitLab CI/CD..."
+
+# ---------------------------------------
+# 1. Backend Build
+# ---------------------------------------
+build-backend:
+  stage: build-backend
+  image: maven:3.8.5-openjdk-17
+  script:
+    - cd backend
+    - mvn $MAVEN_CLI_OPTS clean compile
+  artifacts:
+    paths:
+      - backend/target/
+    expire_in: 1 hour
+
+# ---------------------------------------
+# 2. Backend Test
+# ---------------------------------------
+test-backend:
+  stage: test-backend
+  image: maven:3.8.5-openjdk-17
+  script:
+    - cd backend
+    - mvn $MAVEN_CLI_OPTS test
+  artifacts:
+    when: always
+    reports:
+      junit: backend/target/surefire-reports/*.xml
+
+# ---------------------------------------
+# 3. Frontend Build
+# ---------------------------------------
+build-frontend:
+  stage: build-frontend
+  image: node:18
+  script:
+    - cd frontend
+    - npm ci
+    - npm run build
+  artifacts:
+    paths:
+      - $FRONTEND_BUILD_DIR
+    expire_in: 1 hour
+
+# ---------------------------------------
+# 4. Deploy
+# ---------------------------------------
+deploy:
+  stage: deploy
+  image: alpine
+  script:
+    - echo "🚀 Deploy backend and frontend..."
+    # For example, you could SCP the JAR and frontend build:
+    # scp backend/target/app.jar user@server:/deploy/backend/
+    # scp -r frontend/dist/ user@server:/deploy/frontend/
+  only:
+    - main

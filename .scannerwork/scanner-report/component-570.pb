@@ -1,0 +1,1 @@
+∫ 2webXêhrYFrontEnd/FmsFrontEnd/src/app/gs-authorizer/delegate-gsauth/delegate-gsauth.component.html

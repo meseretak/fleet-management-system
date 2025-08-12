@@ -1,0 +1,6 @@
+projectKey=fleet-management-system
+serverUrl=http://localhost:9000
+serverVersion=25.4.0.105899
+dashboardUrl=http://localhost:9000/dashboard?id=fleet-management-system
+ceTaskId=7462732c-6414-4e83-815a-86f5715fa32b
+ceTaskUrl=http://localhost:9000/api/ce/task?id=7462732c-6414-4e83-815a-86f5715fa32b

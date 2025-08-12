@@ -1,0 +1,44 @@
+image: maven:3.8.4-openjdk-11
+
+stages:
+  - build
+  - sonar
+  - deploy
+
+variables:
+  MAVEN_CLI_OPTS: "-B -Dmaven.repo.local=.m2/repository"
+
+before_script:
+  - echo "Using Maven version:"
+  - mvn -v
+
+# Build Job: Compile and package the Spring Boot app
+build-job:
+  stage: build
+  script:
+    - echo "Cloning the repository..."
+    - git config --global http.proxy ""  # Clear any proxy settings
+    - git config --global https.proxy ""
+    - git config --global url."http://gitlab-server:8000".insteadOf "http://localhost:8000"
+    - mvn $MAVEN_CLI_OPTS clean package
+
+# SonarQube Code Quality Analysis
+sonarqube-check:
+  stage: sonar
+  script:
+    - mvn $MAVEN_CLI_OPTS clean compile
+    - mvn $MAVEN_CLI_OPTS sonar:sonar \
+        -Dsonar.projectKey=fleet_management \
+        -Dsonar.host.url=http://sonarqube:9000 \
+        -Dsonar.token=squ_70765533a9fc061a4b794bc901a8ba497471614d
+        -Dsonar.java.binaries=target/classes
+  only:
+    - branches
+
+# Deploy Job: Deploy the built application
+deploy-job:
+  stage: deploy
+  script:
+    - echo "Deploying to target environment..."
+    # Add your deployment commands here
+
